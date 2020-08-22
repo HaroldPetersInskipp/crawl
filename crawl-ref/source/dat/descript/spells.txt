@@ -1241,6 +1241,11 @@ Spit Poison spell
 
 <Spit Poison ability>
 %%%%
+Splinterspray spell
+
+Fires a directed stream of sharp wooden splinters. Its damage is strongly
+reduced by armour.
+%%%%
 Sporulate spell
 
 Releases a fast, gas-filled floating spore. After seeking out its foe, the

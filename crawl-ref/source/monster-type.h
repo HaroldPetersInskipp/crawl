@@ -628,9 +628,9 @@ enum monster_type                      // menv[].type
     MONS_RAKSHASA,
 #if TAG_MAJOR_VERSION == 34
     MONS_RAKSHASA_FAKE,
-#endif
-#if TAG_MAJOR_VERSION > 34
+#else
     MONS_DRYAD,
+    MONS_ELEIONOMA,
     MONS_SNAPLASHER_VINE,
     MONS_SNAPLASHER_VINE_SEGMENT,
 #endif
@@ -1075,6 +1075,7 @@ enum monster_type                      // menv[].type
     MONS_DEVOURING_SWARM,
     MONS_KITSUNE,
     MONS_GOLIATH_FROG,
+    MONS_ELEIONOMA,
 #endif
 
     NUM_MONSTERS,               // used for polymorph

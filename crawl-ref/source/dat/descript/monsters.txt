@@ -1055,6 +1055,12 @@ electric eel
 
 A type of fish capable of generating a powerful electric field.
 %%%%
+eleionoma
+
+Spirits of marshes and bogs. From the cypresses and willows of the fens stems the
+power of these fierce protective spirits. Wheresoever a tree stands, there also
+the eleionomae may be, melding seamlessly with root and branch.
+%%%%
 elemental wellspring
 
 A swirling conflux of elemental water streaming from the elemental plane into
