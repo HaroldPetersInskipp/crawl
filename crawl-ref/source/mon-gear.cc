@@ -680,6 +680,7 @@ int make_mons_weapon(monster_type type, int level, bool melee_only)
         { MONS_FAUN,                    { FAUN_WEAPONS } },
         { MONS_SATYR,                   { FAUN_WEAPONS } },
         { MONS_SERVANT_OF_WHISPERS,     { FAUN_WEAPONS } },
+        { MONS_KITSUNE,                 { FAUN_WEAPONS } },
         { MONS_NESSOS, {
             { { WPN_LONGBOW,            1 } },
             { 1, 1, 3 },
@@ -2009,6 +2010,7 @@ int make_mons_armour(monster_type type, int level)
     case MONS_ILSUIW:
     case MONS_MARA:
     case MONS_RAKSHASA:
+    case MONS_KITSUNE:
     case MONS_MERFOLK_AQUAMANCER:
     case MONS_SPRIGGAN:
     case MONS_SPRIGGAN_AIR_MAGE:

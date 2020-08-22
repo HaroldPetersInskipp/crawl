@@ -1007,6 +1007,15 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
+    {  MST_KITSUNE,
+      {
+       { SPELL_FOXFIRE, 22, MON_SPELL_PRIEST },
+       { SPELL_SMITING, 11, MON_SPELL_PRIEST },
+       { SPELL_BLINK, 11, MON_SPELL_PRIEST },
+       { SPELL_MINOR_HEALING, 22, MON_SPELL_PRIEST },
+      }
+    },
+
     {  MST_SPHINX,
       {
        { SPELL_CONFUSE, 11, MON_SPELL_WIZARD },

@@ -1534,6 +1534,11 @@ A comical figure full of life and laughter. It looks very happy to see you...
 but is there a slightly malicious cast to its features? Is that red face paint
 or something altogether less pleasant?
 %%%%
+kitsune
+
+Humanoid figures with nine grand tails fanning out behind them. Kitsune hunt
+for small gods in the hidden places of the Dungeon and channel their power.
+%%%%
 knight
 
 A humanoid construct of insubstantial memory, floating through the air. Though
