@@ -205,6 +205,7 @@ enum monster_type                      // menv[].type
     MONS_HORNET,
 #if TAG_MAJOR_VERSION > 34
     MONS_SPARK_WASP,
+    MONS_DEVOURING_SWARM,
 #endif
 #if TAG_MAJOR_VERSION == 34
     MONS_BEETLE,
@@ -1069,6 +1070,7 @@ enum monster_type                      // menv[].type
     MONS_PALENTONGA,
     MONS_BLOATED_HUSK,
     MONS_BUNYIP,
+    MONS_DEVOURING_SWARM,
 #endif
 
     NUM_MONSTERS,               // used for polymorph
