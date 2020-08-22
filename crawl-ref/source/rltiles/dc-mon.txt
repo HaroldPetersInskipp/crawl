@@ -671,6 +671,7 @@ sphinx MONS_SPHINX
 minotaur MONS_MINOTAUR
 %rim 0
 kitsune MONS_KITSUNE
+fenstrider_witch MONS_FENSTRIDER_WITCH
 %rim 1
 tengu MONS_TENGU
 tengu_conjurer MONS_TENGU_CONJURER

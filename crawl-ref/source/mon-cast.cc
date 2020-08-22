@@ -454,6 +454,12 @@ static const map<spell_type, mons_spell_logic> spell_to_logic = {
             return ai_action::good_or_impossible(_torment_vulnerable(foe));
         }, 6)
     },
+    { SPELL_AGONY, _hex_logic(SPELL_AGONY, [](const monster &caster) {
+            const actor* foe = caster.get_foe();
+            ASSERT(foe);
+            return ai_action::good_or_impossible(_torment_vulnerable(foe));
+        }, 6)
+    },
     { SPELL_STRIP_RESISTANCE,
         _hex_logic(SPELL_STRIP_RESISTANCE, _foe_mr_lower_goodness, 6)
     },
@@ -1681,6 +1687,15 @@ bolt mons_spell_beam(const monster* mons, spell_type spell_cast, int power,
         beam.flavour  = BEAM_DEATH_RATTLE;
         beam.foe_ratio = 30;
         beam.pierce   = true;
+        break;
+
+    case SPELL_HURL_SLUDGE:
+        beam.name     = "toxic sludge";
+        beam.colour   = LIGHTGREEN;
+        beam.hit      = 20 + power / 15;
+        beam.damage   = dice_def(3, 7 + mons->get_hit_dice() / 2);
+        beam.flavour  = BEAM_POISON_ARROW;
+        beam.glyph    = dchar_glyph(DCHAR_FIRED_MISSILE);
         break;
 
     // Special behaviour handled in _mons_upheaval
@@ -5746,7 +5761,7 @@ void mons_cast(monster* mons, bolt pbolt, spell_type spell_cast,
         foe->confuse(mons, 5 + random2(3));
         return;
     }
-    
+
     case SPELL_WOODWEAL:
         if (mons->heal(35 + random2(mons->spell_hd(spell_cast) * 3)))
             simple_monster_message(*mons, " is healed.");
@@ -7544,7 +7559,7 @@ static ai_action::goodness _monster_spell_goodness(monster* mon, mon_spell_slot 
 
     case SPELL_MAJOR_HEALING:
         return ai_action::good_or_bad(mon->hit_points <= mon->max_hit_points / 2);
-    
+
     case SPELL_WOODWEAL:
     {
         bool touch_wood = false;
