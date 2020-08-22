@@ -1367,7 +1367,6 @@ static int _num_items_wanted(int absdepth0)
 static int _num_mons_wanted()
 {
     const bool in_pan = player_in_branch(BRANCH_PANDEMONIUM);
-
     // No disconnected branches aside from Pan have level monsters.
     if ((!player_in_connected_branch() && !in_pan)
         // Temple is connected but has no monsters.
@@ -1378,7 +1377,7 @@ static int _num_mons_wanted()
 
     int size = 12;
 
-    if (in_pan)
+    if (player_in_branch(BRANCH_SWAMP) || in_pan)
         size = 8;
     else if (player_in_branch(BRANCH_CRYPT))
         size = 10;
