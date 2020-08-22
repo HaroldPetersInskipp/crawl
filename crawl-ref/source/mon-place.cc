@@ -1824,6 +1824,7 @@ static const map<monster_type, band_set> bands_by_leader = {
     { MONS_YAKTAUR,         { {2}, {{ BAND_YAKTAURS, {2, 5} }}}},
     { MONS_DEATH_YAK,       { {}, {{ BAND_DEATH_YAKS, {2, 6} }}}},
     { MONS_INSUBSTANTIAL_WISP, { {}, {{ BAND_INSUBSTANTIAL_WISPS, {2, 6} }}}},
+    { MONS_SWAMP_DRAGON,    { {2, 17}, {{ BAND_INSUBSTANTIAL_WISPS, {2, 6} }}}}, // only appear on swamp:3 onward
     { MONS_OGRE_MAGE,       { {}, {{ BAND_OGRE_MAGE, {4, 8} }}}},
     { MONS_BALRUG,          { {}, {{ BAND_BALRUG, {2, 5}, true }}}},
     { MONS_CACODEMON,       { {}, {{ BAND_CACODEMON, {1, 4}, true }}}},

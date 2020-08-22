@@ -1455,7 +1455,8 @@ infernal demonspawn
 insubstantial wisp
 
 A thin wisp of floating gas, flickering, disappearing and reforming in a
-disconcertingly random fashion while building up an electrical charge.
+disconcertingly random fashion while building up an electrical charge. Their
+crackling presence is enough to ignite nearby poisonous and mephitic clouds.
 %%%%
 iron dragon
 

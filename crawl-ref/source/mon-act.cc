@@ -2222,6 +2222,54 @@ static void _torpor_snail_slow(monster* mons)
     }
 }
 
+static bool _can_ignite_cloud(const cloud_struct* cloud)
+{
+    if (!cloud)
+        return false;
+    const cloud_type ctyp = cloud->type;
+    return ctyp == CLOUD_MEPHITIC || ctyp == CLOUD_POISON;
+}
+
+static string _ignite_cloud(const monster &mons, coord_def p)
+{
+    cloud_struct* cloud = cloud_at(p);
+    if (!_can_ignite_cloud(cloud))
+        return "";
+
+    // get the old cloud name before we burn it
+    const string cloud_name = cloud->cloud_name();
+
+    cloud->type = CLOUD_FIRE;
+    cloud->decay = 30 + random2(70); // 3-10 turns
+    cloud->whose = mons.kill_alignment();
+    cloud->killer = KILL_MON_MISSILE;
+    cloud->source = mons.mid;
+
+    // flood fill recursively
+    for (adjacent_iterator ai(p, false); ai; ai++) {
+        _ignite_cloud(mons, *ai);
+    }
+
+    return cloud_name;
+}
+
+static void _insubstantial_wisp_ignite(const monster &mons)
+{
+    // avoid printing repeated messages if we ignite separate
+    // cloud groups on either side
+    string cloud_name = "";
+    for (adjacent_iterator ai(mons.pos(), false); ai; ai++) {
+        const string ignited = _ignite_cloud(mons, *ai);
+        if (ignited != "")
+            cloud_name = ignited;
+    }
+    if (cloud_name != "")
+    {
+        mprf("%s sheds sparks, and the %s bursts into flame!",
+             mons.name(DESC_THE).c_str(), cloud_name.c_str());
+    }
+}
+
 static void _post_monster_move(monster* mons)
 {
     if (invalid_monster(mons))
@@ -2237,6 +2285,9 @@ static void _post_monster_move(monster* mons)
 
     if (mons->type == MONS_TORPOR_SNAIL)
         _torpor_snail_slow(mons);
+
+    if (mons->type == MONS_INSUBSTANTIAL_WISP)
+        _insubstantial_wisp_ignite(*mons);
 
     if (mons->type == MONS_WATER_NYMPH)
     {
