@@ -1623,7 +1623,7 @@ static void _tag_construct_you(writer &th)
 
     marshallByte(th, you.piety_hysteresis);
 
-    you.m_quiver.save(th);
+    you.m_quiver_history.save(th);
 
     CANARY;
 
@@ -3613,7 +3613,7 @@ static void _tag_read_you(reader &th)
 
     you.piety_hysteresis = unmarshallByte(th);
 
-    you.m_quiver.load(th);
+    you.m_quiver_history.load(th);
 
 #if TAG_MAJOR_VERSION == 34
     if (th.getMinorVersion() < TAG_MINOR_FRIENDLY_PICKUP)
@@ -4090,6 +4090,10 @@ static void _tag_read_you_items(reader &th)
     for (int i = 0; i < iclasses; i++)
         for (int j = 0; j < count2; j++)
             you.force_autopickup[i][j] = unmarshallInt(th);
+
+    // TODO: not sure this is the ideal timing or way
+    you.quiver_action.set(quiver::find_ammo_action());
+
 #if TAG_MAJOR_VERSION == 34
     if (th.getMinorVersion() < TAG_MINOR_FOOD_AUTOPICKUP)
     {
