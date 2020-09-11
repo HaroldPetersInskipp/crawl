@@ -2551,6 +2551,8 @@ static monster* _find_implant_eggs_target(const monster &caster)
             && mon->hit_points < mon->max_hit_points
             // don't lay eggs in plants or gargoyles
             && (mon->holiness() & (MH_NATURAL | MH_UNDEAD | MH_HOLY))
+            // don't lay eggs in ghosts
+            && !mon->is_insubstantial()
             // don't lay eggs in other bugs
             && mon->body_size() > SIZE_TINY
             // summons are safe (gameplay around summons becomes very dumb otherwise)
