@@ -314,7 +314,7 @@ static const pop_entry pop_swamp[] =
   {  5,  7, 1000, FLAT, MONS_DEVOURING_SWARM },
   {  5,  7, 1500, FLAT, MONS_TENTACLED_MONSTROSITY },
   {  5,  7, 1500, FLAT, MONS_GHOUL },
-  {  5,  7, 1000, FLAT, MONS_DEATH_SCARAB },
+  {  5,  7, 1000, FLAT, MONS_SPRIGGAN_AIR_MAGE },
   {  5,  7, 1000, FLAT, MONS_SPRIGGAN_BERSERKER },
   {  5,  7, 1000, FLAT, MONS_DEATH_DRAKE }, // not that bad but very mean
   { 0,0,0,FLAT,MONS_0 }
