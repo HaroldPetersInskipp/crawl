@@ -2553,7 +2553,7 @@ static monster* _find_implant_eggs_target(const monster &caster)
             && (mon->holiness() & (MH_NATURAL | MH_UNDEAD | MH_HOLY))
             // don't lay eggs in other bugs
             && mon->body_size() > SIZE_TINY
-            // summons are safe (maybe? reconsider this)
+            // summons are safe (gameplay around summons becomes very dumb otherwise)
             && !mon->is_summoned()
             // don't re-egg egged monsters
             && !mon->has_ench(ENCH_INSECT_EGGS))
