@@ -2128,7 +2128,6 @@ static const map<band_type, vector<member_possibilites>> band_membership = {
     { BAND_DANCING_WEAPONS,     {{{MONS_DANCING_WEAPON, 1}}}},
     { BAND_SLIME_CREATURES,     {{{MONS_SLIME_CREATURE, 1}}}},
     { BAND_SPRIGGAN_RIDERS,     {{{MONS_SPRIGGAN_RIDER, 1}}}},
-    { BAND_DEVOURING_SWARM,     {{{MONS_DEVOURING_SWARM, 1}}}},
     { BAND_MOLTEN_GARGOYLES,    {{{MONS_MOLTEN_GARGOYLE, 1}}}},
     { BAND_SKELETAL_WARRIORS,   {{{MONS_SKELETAL_WARRIOR, 1}}}},
     { BAND_THRASHING_HORRORS,   {{{MONS_THRASHING_HORROR, 1}}}},
@@ -2237,6 +2236,16 @@ static const map<band_type, vector<member_possibilites>> band_membership = {
                                   {MONS_WOLF_SPIDER, 7},
                                   {MONS_ORB_SPIDER, 3},
                                   {MONS_DEMONIC_CRAWLER, 2}}}},
+    // two swarms (counting the leader)...
+    { BAND_DEVOURING_SWARM,     {{{MONS_DEVOURING_SWARM, 1}},
+        // a bloated husk to get things injured
+                                 {{MONS_BLOATED_HUSK, 1}},
+        // and 1-3 fleshy pals to get egged
+                                 {{MONS_TYRANT_LEECH, 9},
+                                  {MONS_GOLIATH_FROG, 9},
+                                  {MONS_BUNYIP, 3},
+                                  {MONS_ALLIGATOR, 3},
+                                  {MONS_HYDRA, 3}}}},
 
     { BAND_VAULT_WARDEN,        {{{MONS_VAULT_SENTINEL, 4},
                                   {MONS_IRONBRAND_CONVOKER, 6},
