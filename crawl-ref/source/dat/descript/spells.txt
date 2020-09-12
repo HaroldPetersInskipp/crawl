@@ -1606,6 +1606,11 @@ Wind Blast spell
 
 Causes a strong gust of wind, pushing away creatures and clouds in a cone.
 %%%%
+Woodweal spell
+
+Draws on the vitality of leaf and bark to heal a large amount of damage.
+Cannot be cast without a tree adjacent.
+%%%%
 Word of Recall spell
 
 Recalls intelligent allies from elsewhere on the same level to the caster,
