@@ -78,6 +78,7 @@ spret cast_imb(int pow, bool fail);
 
 void actor_apply_toxic_bog(actor *act);
 
+vector<coord_def> find_ramparts_walls(const coord_def &center);
 spret cast_frozen_ramparts(int pow, bool fail);
 
 monster* find_abszero_target(int radius);
